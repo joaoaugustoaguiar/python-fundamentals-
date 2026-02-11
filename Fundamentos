@@ -1,0 +1,53 @@
+Operações básicas com python:
+
+"Dispositivo" de resolução de equação do segundo grau com python:
+
+#x^2-3x-10
+a=1
+b=-3
+c=-10
+x1=((-b+(b**2-4*a*c)**0.5)/2)
+x2=((-b-(b**2-4*a*c)**0.5)/2)
+input("Dada a equação x^2-3x-10,encontre a,b e c e descubra as raízes:")
+input("x1=((-b+(b**2-4*a*c)**0.5)/2)")
+input("x2=((-b-(b**2-4*a*c)**0.5)/2)")
+print("As raízes são:",x1,x2)
+
+
+Condicionais:
+
+Comparação de dois números:
+
+#Ler dois diferentes números
+
+numero1=int(input("Digite o primeiro número: "))
+numero2=int(input("Digite o segundo número: "))
+
+#Escolher o maior valor
+
+if numero1>numero2:
+    maior_numero=numero1
+else:
+    maior_numero=numero2
+
+#Resultado
+
+print("O maior número é:", maior_numero)
+
+Comparação entre três números:
+
+number1=int(input("Digite o primeiro número: "))
+number2=int(input("Digite o segundo número: "))
+number3=int(input("Digite o terceiro número: "))
+
+larger_number=number1
+
+if number2>larger_number:
+    larger_number=number2
+    
+if number3>larger_number:
+    larger_number=number3
+    
+print("O maior número é: ",larger_number)
+
+
