@@ -1,0 +1,61 @@
+Testador de triângulos:
+
+a=int(input("Digite um valor para um lado:"))
+b=int(input("Digite um valor pra o segundo lado: "))
+c=int(input("Digite um valor para o terceiro lado: "))
+
+def is_triangle(a,b,c):
+    return a + b > c and b + c > a and a + c > b
+
+if is_triangle(a,b,c):
+    print("Sim, isso pode ser um triângulo")
+else:
+    print("Não, isso não pode ser um triângulo")
+
+LEAP YEAR PROJECT:
+
+def is_year_leap(year):
+    if year%4==0 and year%100 > 0 or year%400==0:
+        return True
+    else:
+        return False
+
+def days_in_month(year, month):
+    if month < 1 or month > 12:
+        return None
+    
+    days = [31,28,31,30,31,30,31,31,30,31,30,31]
+    
+    if month == 2 and is_year_leap(year):
+        return 29
+    return days[month - 1]
+
+days_in_month(1900,2)
+
+test_years = [1900, 2000, 2016, 1987]
+test_months = [2, 2, 1, 11]
+test_results = [28, 29, 31, 30]
+for i in range(len(test_years)):
+ yr = test_years[i]
+ mo = test_months[i]
+ print(yr, mo, "->", end="")
+ result = days_in_month(yr, mo)
+ if result == test_results[i]:
+     print("OK")
+ else:
+     print("Fracassado")
+
+Cálculo de taxas:
+
+income = float(input("Entre com os rendimentos anuais "))
+
+if income < 85528:
+ tax = income * 0.18 - 556.02
+elif income>85528:
+    tax= 14839 + (income-85528)*0.32
+if tax<0:
+    tax=0
+
+tax = round(tax, 0)
+print("A taxa é:", tax, "thalers") 
+
