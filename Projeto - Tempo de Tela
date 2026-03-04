@@ -1,1 +1,53 @@
+import matplotlib.pyplot as plt
+semana = ["Segunda","Quarta","Sexta"]
 
+#Gráfico para mostrar um tempo de uso de tela
+
+def dados_usuario():
+    try:
+        print("Utilize o tempo em horas e os minutos coloque 'h.min'")
+        x=float(input("Digite o tempo do primeiro dia(Primeira semana):"))
+        y=float(input("Digite o tempo do segundo dia(Primeira semana):"))
+        z=float(input("Digite o tempo do terceiro dia(Primeira semana):"))
+
+        a=float(input("Digite o tempo do primeiro dia(Segunda semana):"))
+        b=float(input("Digite o tempo do segundo dia(Segunda semana):"))
+        c=float(input("Digite o tempo do terceiro dia(Segunda semana):"))
+        return x,y,z,a,b,c
+    except (NameError,ValueError):
+        print("Por favor, insira um valor válido")
+x,y,z,a,b,c = dados_usuario()
+def médias():
+    if (a+b+c+x+y+z)/6 > 3.0:
+        print("Você está acima da média considerada ideal, gostaria de algumas dicas?")
+        resposta = input("Digite Sim ou Não:")
+        if resposta.upper() == "SIM":
+            print('''Aqui estão algumas dicas para diminuir o uso de tela:
+                        -Tente substituir tempo de tela por leitura
+                        -Estabeleça horários fixos para uso
+                        -Pense em utilizar aplicativos de controle de tempo''')
+        elif resposta.upper() == "NÃO":
+            print("Ok, obrigado por participar")
+        else:
+            print("Não conseguimos entender o que você quis dizer")
+
+def gráfico():
+
+    #Tempo de uso na primeira semana:
+    tempo1 = [x,y,z]
+    #Tempo de uso na segunda semana:
+    tempo2 = [a,b,c]
+    #Média de uso considerada saudável:
+    tempo4 = [3.0,3.0,3.0]
+    
+    plt.plot(semana,tempo1, label = "Semana um")
+    plt.plot(semana,tempo2, label = "Semana dois")
+    plt.plot(semana,tempo4, label = "Média de uso considerada saudável")
+    plt.title("Tempo de uso de tela por dia")
+    plt.xlabel("Dias da semana")
+    plt.ylabel("Tempo em horas")
+    plt.legend()
+    plt.show()
+ 
+médias()
+gráfico()
